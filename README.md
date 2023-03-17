@@ -48,71 +48,38 @@ The base URL for the API is `http://localhost:8000/api/` with Authorization by J
 | POST   | /post/show | Students can view post from their enrolled course | post_id | Student Authorization |
 | POST   | /reply/create | Students can make a reply to post from their enrolled course | content, post_id | Student Authorization |
 | POST   | /reply/delete | Students can delete their reply, Instructor can delete any reply | reply_id | Student or Instructor Authorization |
-Student:
-
-![N|https://raw.githubusercontent.com/kimlongphp110499/first_projectmaster/Picture1.png)]  
-![N|https://raw.githubusercontent.com/kimlongphp110499/first_projectmaster/Picture2.png)]  
-![N|https://raw.githubusercontent.com/kimlongphp110499/first_projectmaster/Picture3.png)]
-
-Instructor:
-
-![N|https://raw.githubusercontent.com/kimlongphp110499/first_projectmaster/Picture5.png)] 
-![N|https://raw.githubusercontent.com/kimlongphp110499/first_projectmaster/Picture6.png)] 
-![N|https://raw.githubusercontent.com/kimlongphp110499/first_projectmaster/Picture7.png)]
-
-Admin:
-
-![N|https://raw.githubusercontent.com/kimlongphp110499/first_projectmaster/Picture8.png)]  
-![N|https://raw.githubusercontent.com/kimlongphp110499/first_projectmaster/Picture9.png)] 
-![N|https://raw.githubusercontent.com/kimlongphp110499/first_projectmaster/Picture10.png)]
-
-Course:
-
-![N|https://raw.githubusercontent.com/kimlongphp110499/first_projectmaster/Picture11.png)]
-![N|https://raw.githubusercontent.com/kimlongphp110499/first_projectmaster/Picture12.png)]
-![N|https://raw.githubusercontent.com/kimlongphp110499/first_projectmaster/Picture13.png)] 
-
-Post:
-
-![N|https://raw.githubusercontent.com/kimlongphp110499/first_projectmaster/Picture14.png)]
-![N|https://raw.githubusercontent.com/kimlongphp110499/first_projectmaster/Picture15.png)] 
-
-Reply:
- 
-![N|https://raw.githubusercontent.com/kimlongphp110499/first_projectmaster/Picture16.png)]  
-![N|https://raw.githubusercontent.com/kimlongphp110499/first_projectmaster/Picture17.png)]
-
 
 Student:
 
-![N|https://raw.githubusercontent.com/kimlongphp110499/first_project/master/Picture1.png)]  
-![N|https://raw.githubusercontent.com/kimlongphp110499/first_project/master/Picture2.png)]  
-![N|https://raw.githubusercontent.com/kimlongphp110499/first_project/master/Picture3.png)]
+![N|Solid](https://raw.githubusercontent.com/kimlongphp110499/first_project/master/Picture1.png)]  
+![N|Solid](https://raw.githubusercontent.com/kimlongphp110499/first_project/master/Picture2.png)]  
+![N|Solid](https://raw.githubusercontent.com/kimlongphp110499/first_project/master/Picture3.png)]
 
 Instructor:
 
-![N|https://raw.githubusercontent.com/kimlongphp110499/first_project/master/Picture5.png)] 
-![N|https://raw.githubusercontent.com/kimlongphp110499/first_project/master/Picture6.png)] 
-![N|https://raw.githubusercontent.com/kimlongphp110499/first_project/master/Picture7.png)]
+![N|Solid](https://raw.githubusercontent.com/kimlongphp110499/first_project/master/Picture5.png)] 
+![N|Solid](https://raw.githubusercontent.com/kimlongphp110499/first_project/master/Picture6.png)] 
+![N|Solid](https://raw.githubusercontent.com/kimlongphp110499/first_project/master/Picture7.png)]
 
 Admin:
 
-![N|https://raw.githubusercontent.com/kimlongphp110499/first_project/master/Picture8.png)]  
-![N|https://raw.githubusercontent.com/kimlongphp110499/first_project/master/Picture9.png)] 
-![N|https://raw.githubusercontent.com/kimlongphp110499/first_project/master/Picture10.png)]
+![N|Solid](https://raw.githubusercontent.com/kimlongphp110499/first_project/master/Picture8.png)]  
+![N|Solid](https://raw.githubusercontent.com/kimlongphp110499/first_project/master/Picture9.png)] 
+![N|Solid](https://raw.githubusercontent.com/kimlongphp110499/first_project/master/Picture10.png)]
 
 Course:
 
-![N|https://raw.githubusercontent.com/kimlongphp110499/first_project/master/Picture11.png)]
-![N|https://raw.githubusercontent.com/kimlongphp110499/first_project/master/Picture12.png)]
-![N|https://raw.githubusercontent.com/kimlongphp110499/first_project/master/Picture13.png)] 
+![N|Solid](https://raw.githubusercontent.com/kimlongphp110499/first_project/master/Picture11.png)]
+![N|Solid](https://raw.githubusercontent.com/kimlongphp110499/first_project/master/Picture12.png)]
+![N|Solid](https://raw.githubusercontent.com/kimlongphp110499/first_project/master/Picture13.png)] 
 
 Post:
 
-![N|https://raw.githubusercontent.com/kimlongphp110499/first_project/master/Picture14.png)]
-![N|https://raw.githubusercontent.com/kimlongphp110499/first_project/master/Picture15.png)] 
+![N|Solid](https://raw.githubusercontent.com/kimlongphp110499/first_project/master/Picture14.png)]
+![N|Solid](https://raw.githubusercontent.com/kimlongphp110499/first_project/master/Picture15.png)] 
 
 Reply:
  
-![N|https://raw.githubusercontent.com/kimlongphp110499/first_project/master/Picture16.png)]  
-![N|https://raw.githubusercontent.com/kimlongphp110499/first_project/master/Picture17.png)]
+![N|Solid](https://raw.githubusercontent.com/kimlongphp110499/first_project/master/Picture16.png)]  
+![N|Solid](https://raw.githubusercontent.com/kimlongphp110499/first_project/master/Picture17.png)]
+
