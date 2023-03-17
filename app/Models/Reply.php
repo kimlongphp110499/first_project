@@ -12,6 +12,8 @@ class Reply extends Model
 
     protected $fillable = [
         'content',
+        'post_id',
+        'user_id',
     ];
 
     public function user(): BelongsTo
@@ -21,6 +23,6 @@ class Reply extends Model
 
     public function post(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Post::class);
     }
 }

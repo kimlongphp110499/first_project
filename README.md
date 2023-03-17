@@ -1,64 +1,50 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Laravel Back API
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This is a RESTful API built with Laravel that provides the backend functionality for an online learning platform. The API has multiple account types: admin, instructors and students.
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- Instructors can create courses and make posts for their courses
+- Admin delete courses
+- Students can enroll in courses and reply to posts of enrolled courses.
+- Students can view their courses enrolled.
+- Instructors can delete any reply on their posts.
+- Students can delete their own replies on posts.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Installation
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Clone this repository: `git clone https://github.com/kimlongphp110499/first_project`
+- Install dependencies: `composer install`
+- Copy the .env.example file to .env and fill in your database credentials
+- Generate an app key: `php artisan key:generate`
+- Run migrations and seeders: `php artisan migrate`
+- Start the server: `php artisan serve`
 
-## Learning Laravel
+## Endpoints
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+The base URL for the API is `http://localhost:8000/api/` with Authorization by JWT Bearer token
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+| Method | Endpoint | Description | Parameters | Headers |
+| ------ | -------- | ----------- | ---------- | ------- |
+| POST   | /student/register | Students can register new account | name, email, password, password_confirmation | None |
+| POST   | /student/login | Students can login with their account | email, password | None |
+| GET    | /student/profile | Students can register new account |  | Student Authorization |
+| POST   | /student/refresh | Students can create new access tokens | email, password | Student Authorization |
+| POST   | /student/logout | Students logout their account | email, password | Student Authorization |
+| POST   | /admin/register | Admins can register new account | name, email, password, password_confirmation | None |
+| POST   | /admin/login | Admins can login with their account | email, password | None |
+| GET    | /admin/profile | Admins can register new account |  | Admin Authorization |
+| POST   | /admin/refresh | Admins can create new access tokens | email, password | Admin Authorization |
+| POST   | /admin/logout | Admins logout their account | email, password | Admin Authorization |
+| POST   | /instructor/register | Instructors can register new account | name, email, password, password_confirmation | None |
+| POST   | /instructor/login | Instructors can login with their account | email, password | None |
+| GET    | /instructor/profile | Instructors can register new account |  | Instructor Authorization |
+| POST   | /instructor/refresh | Instructors can create new access tokens | email, password | Instructor Authorization |
+| POST   | /instructor/logout | Instructors logout their account | email, password | Instructor Authorization |
+| POST   | /course/create | Instructors can register new course | name, amount | Instructor Authorization |
+| POST   | /courses/enroll | Students can enroll any course | course_id | Student Authorization |
+| POST   | /course/delete | Admin can delete any course | course_id | Admin Authorization |
+| POST   | /post/create | Instructors can create post for their course | title, content, course_id | Instructor Authorization |
+| POST   | /post/show | Students can view post from their enrolled course | post_id | Student Authorization |
+| POST   | /reply/create | Students can make a reply to post from their enrolled course | content, post_id | Student Authorization |
+| POST   | /reply/delete | Students can delete their reply, Instructor can delete any reply | reply_id | Student or Instructor Authorization |

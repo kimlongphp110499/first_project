@@ -5,14 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Course;
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Validator;
 
 class PostApiController extends Controller
 {
     public function create(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'title' => 'required|string|between:2,100|unique:post,title',
-            'content' => 'required|integer',
+            'title' => 'required|string|between:2,100|unique:posts,title',
+            'content' => 'required|string',
             'course_id' => 'required|integer',
         ]);
 
@@ -21,24 +22,23 @@ class PostApiController extends Controller
         }
 
         $course = Course::where('id', $request->course_id)
-            ->where('instructor_id', auth()->user()->id)
+            ->where('instructor_id', auth('instructor')->user()->id)
             ->first();
 
         if ($course) {
-            $post = $course->create([
+            $post = $course->posts()->create([
                 'title' => $request->title,
-                'content' => $request->content,
+                'content' => $request->content
             ]);
 
             return response()->json([
                 'message' => 'Post created successfully',
-                'course' => $post
+                'post' => $post
             ], 201);
         }
 
         return response()->json([
             'message' => `Course not exist. Can't make a post`,
-            'course' => auth()->user()->courses()->where('id', $request->course_id)->create($request->all())
         ], 201);
     }
 
@@ -53,15 +53,10 @@ class PostApiController extends Controller
         }
 
         $post = Post::where('id', $request->id)
-            ->whereIn('course_id', auth()->user()->courses()->pluck('id'))
+            ->whereIn('course_id', auth('student')->user()->userCourses()->pluck('course_id'))
             ->first();
 
         if ($post) {
-            $post = $course->create([
-                'title' => $request->title,
-                'content' => $request->content,
-            ]);
-
             return response()->json([
                 'message' => 'Access successfully',
                 'post' => $post

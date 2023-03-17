@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminApiController;
 use App\Http\Controllers\CourseApiController;
 use App\Http\Controllers\InstructorApiController;
 use App\Http\Controllers\PostApiController;
+use App\Http\Controllers\ReplyApiController;
 use App\Http\Controllers\UserApiController;
 
 /*
@@ -61,11 +62,12 @@ Route::group(['middleware' => 'api', 'prefix' => 'course'], function () {
 });
 
 Route::group(['middleware' => 'api', 'prefix' => 'post'], function () {
-    Route::post('create', [PostApiController::class, 'create'])->middleware('auth:student');
+    Route::post('create', [PostApiController::class, 'create'])->middleware('auth:instructor');
+    Route::post('show', [PostApiController::class, 'show'])->middleware('auth:student');
     Route::post('delete', [PostApiController::class, 'delete'])->middleware('auth:instructor');
 });
 
 Route::group(['middleware' => 'api', 'prefix' => 'reply'], function () {
-    Route::post('create', [PostApiController::class, 'create'])->middleware('auth:student');
-    Route::post('delete', [PostApiController::class, 'delete'])->middleware('auth:student|instructor');
+    Route::post('create', [ReplyApiController::class, 'create'])->middleware('auth:student');
+    Route::post('delete', [ReplyApiController::class, 'delete']);
 });

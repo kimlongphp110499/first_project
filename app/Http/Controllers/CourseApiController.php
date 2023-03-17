@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Validator;
 use App\Models\Course;
+use App\Models\UserCourse;
 
 class CourseApiController extends Controller
 {
@@ -12,7 +13,7 @@ class CourseApiController extends Controller
     public function create(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|between:2,100|unique:course,name',
+            'name' => 'required|string|between:2,100|unique:courses,name',
             'amount' => 'required|integer',
         ]);
 
@@ -22,7 +23,7 @@ class CourseApiController extends Controller
 
         return response()->json([
             'message' => 'Course created successfully',
-            'course' => auth()->user()->courses()->create($request->all())
+            'course' => auth('instructor')->user()->courses()->create($request->all())
         ], 201);
     }
 
