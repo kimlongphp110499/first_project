@@ -12,7 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Http\Controllers\ChatController;
 
+Route::post('/send-message', [ChatController::class, 'sendMessage']);
+Route::get('/messages', [ChatController::class, 'getMessages']);
 Route::get('/', function () {
     return view('welcome');
 });
